@@ -158,48 +158,51 @@ $(function () {
     S.loginDefautl = "/login/?e=" + +new Date();
     //初始化页面信息
     // G.ajax("membergamedefault", function (json) {
-    //     __sysinfo.data = json;
-    //     if (json) {
-    //         $("#userName").html(json.userName);
-    //         $("#creditSpan").html(json.credits);
-    //         $("#usableCreditSpan").html(json.ky);
-    //         if (json.state) {
-    //             $("#state").html("(" + json.state + ")");
-    //         }
-    //         //可选彩种列表
-    //         var len = 0, data_menuList = [], data_ary;
-    //         for (var i in json.gameList) {
-    //             data_ary = getSwitch(i);
-    //             if (len == 0) { //默认彩种
-    //                 $("#menuText").attr("data-index", data_ary[1]).find("span").html(data_ary[0]);
-    //                 S.loadingWrap = true;
-    //                 gametop(data_ary[1], true); //加载彩种玩法盘
-    //             }
-    //
-    //
-    //             data_menuList.push("<li><a href='javascript:void(0)' data-index='" + data_ary[1] + "'>" + data_ary[0] + "</a></li>");
-    //             len++;
-    //         }
-    //         $("#menuList").html(data_menuList.join(""));
-    //         gamechangeevent();
-    //     }
+        var  json = '{"userName":"29chenv","credits":0.0,"paytype":0,"maxPayout":1000000,"downBak":1,"ipJson":["http://ub1.pk369369.com","http://ub2.pk369369.com","http://ub3.pk369369.com","http://ub4.pk369369.com"],"gameList":{"3":[{"gamedata\u0026gameIndex\u003d3\u0026type\u003d2":"一字定"},{"gamedata\u0026gameIndex\u003d3\u0026type\u003d9":"二字定"},{"gamedata\u0026gameIndex\u003d3\u0026type\u003d19":"快打"},{"gamedata\u0026gameIndex\u003d3\u0026type\u003d20":"快选"},{"gamedata\u0026gameIndex\u003d3\u0026type\u003d22":"txt导入"}]}}';
+        json = $.parseJSON(json);
+        __sysinfo.data = json;
+        if (json) {
+            $("#userName").html(json.userName);
+            $("#creditSpan").html(json.credits);
+            $("#usableCreditSpan").html(json.ky);
+            if (json.state) {
+                $("#state").html("(" + json.state + ")");
+            }
+            //可选彩种列表
+            var len = 0, data_menuList = [], data_ary;
+            for (var i in json.gameList) {
+                data_ary = getSwitch(i);
+                if (len == 0) { //默认彩种
+                    $("#menuText").attr("data-index", data_ary[1]).find("span").html(data_ary[0]);
+                    S.loadingWrap = true;
+                    gametop(data_ary[1], true); //加载彩种玩法盘
+                }
+
+
+                data_menuList.push("<li><a href='javascript:void(0)' data-index='" + data_ary[1] + "'>" + data_ary[0] + "</a></li>");
+                len++;
+            }
+            $("#menuList").html(data_menuList.join(""));
+            gamechangeevent();
+        }
     // });
 });
 
 //获取最新公告
 function getlastNewsInfo() {
     // G.ajax("/lastNewsInfo",function (json) {
-    //     if (json && json.content && json.content != G.getCookie(__sysinfo.autoTid + "lastNewsInfo")){
-    //         G.alert({ content: json.content, title: "通知", width: 600,height:400,close:function () {
-    //
-    //                 G.setCookie(__sysinfo.autoTid + "lastNewsInfo",json.content);
-    //
-    //             },okVal:"已阅读",ok:function () {
-    //                 return true;
-    //             }});
-    //
-    //     }
-    //
+        var json = '{"id":2,"content":"尊敬的各级用户，公司现在只有22个电脑和手机登录版机器人免费试用到本月28号，是您做群的好帮手，如有需要，请下载博信安全聊天软件www.pgyer.com/ComG添加客服账号10086为好友联系！先到先得，机不可失！！！"}';
+        if (json && json.content && json.content != G.getCookie(__sysinfo.autoTid + "lastNewsInfo")){
+            G.alert({ content: json.content, title: "通知", width: 600,height:400,close:function () {
+
+                    G.setCookie(__sysinfo.autoTid + "lastNewsInfo",json.content);
+
+                },okVal:"已阅读",ok:function () {
+                    return true;
+                }});
+
+        }
+
     // },function () {
     //
     // });

@@ -74,7 +74,6 @@ function gamedata(msg) {
     var gameIndex = G.query("gameIndex", "?" + msg.data_action);
     var type = G.query("type", "?" + msg.data_action);
     var my_type = type;
-
     if (gameIndex == 3 && type >= 9 && type <= 18) my_type = 9;
 
     $("#game_box_title li").removeClass("active");
@@ -89,7 +88,27 @@ function gamedata(msg) {
     }
     $(".rightBox div.left li[name='knResult']").remove();
     $(".rightBox div.right #knResult").remove();
-    S.request = G.ajax(data_action , function (json) {
+    // S.request = G.ajax(data_action , function (json) {
+    //memberdata
+    //data_action的值为  membergamedata&gameIndex=3&type=22
+    //目的是为了取type等于多少来区分是哪一个栏目
+    //所以这里先用type来做选择
+    var data_action_arr = data_action.split('&');
+    var type = data_action_arr[2].substr(5);
+    var json;
+    console.log(type);
+    if(type==2){
+        json = $.parseJSON('{"openDateList":{"number":20190802006,"endTime":224,"lotteryTime":244,"nextNumber":1},"win":0.0,"credit":0.0,"usableCredit":0.0,"phase":[5,283,"5","00:00","24:00"],"openNumList":{"newnumber":20190802005,"numList":[6,3,5,4,8]},"oddsList":{"1":"9.97","2":"9.97","3":"9.97","4":"9.97","5":"9.97","6":"9.97","7":"9.97","8":"9.97","9":"9.97","10":"9.97","15":"9.97","16":"9.97","17":"9.97","18":"9.97","19":"9.97","20":"9.97","21":"9.97","22":"9.97","23":"9.97","24":"9.97","29":"9.97","30":"9.97","31":"9.97","32":"9.97","33":"9.97","34":"9.97","35":"9.97","36":"9.97","37":"9.97","38":"9.97","43":"9.97","44":"9.97","45":"9.97","46":"9.97","47":"9.97","48":"9.97","49":"9.97","50":"9.97","51":"9.97","52":"9.97","57":"9.97","58":"9.97","59":"9.97","60":"9.97","61":"9.97","62":"9.97","63":"9.97","64":"9.97","65":"9.97","66":"9.97"},"bianseList":{}}');
+    }else if(type==9){
+        json = $.parseJSON('{"openDateList":{"number":20190802009,"endTime":257,"lotteryTime":277,"nextNumber":1},"win":0.0,"credit":0.0,"usableCredit":0.0,"phase":[8,280,"5","00:00","24:00"],"openNumList":{"newnumber":20190802007,"numList":[4,6,0,8,7]},"oddsList":{"108":"99.7","109":"99.7","110":"99.7","111":"99.7","112":"99.7","113":"99.7","114":"99.7","115":"99.7","116":"99.7","117":"99.7","118":"99.7","119":"99.7","120":"99.7","121":"99.7","122":"99.7","123":"99.7","124":"99.7","125":"99.7","126":"99.7","127":"99.7","128":"99.7","129":"99.7","130":"99.7","131":"99.7","132":"99.7","133":"99.7","134":"99.7","135":"99.7","136":"99.7","137":"99.7","138":"99.7","139":"99.7","140":"99.7","141":"99.7","142":"99.7","143":"99.7","144":"99.7","145":"99.7","146":"99.7","147":"99.7","148":"99.7","149":"99.7","150":"99.7","151":"99.7","152":"99.7","153":"99.7","154":"99.7","155":"99.7","156":"99.7","157":"99.7","158":"99.7","159":"99.7","160":"99.7","161":"99.7","162":"99.7","163":"99.7","164":"99.7","165":"99.7","166":"99.7","167":"99.7","168":"99.7","169":"99.7","170":"99.7","171":"99.7","172":"99.7","173":"99.7","174":"99.7","175":"99.7","176":"99.7","177":"99.7","178":"99.7","179":"99.7","180":"99.7","181":"99.7","182":"99.7","183":"99.7","184":"99.7","185":"99.7","186":"99.7","187":"99.7","188":"99.7","189":"99.7","190":"99.7","191":"99.7","192":"99.7","193":"99.7","194":"99.7","195":"99.7","196":"99.7","197":"99.7","198":"99.7","199":"99.7","200":"99.7","201":"99.7","202":"99.7","203":"99.7","204":"99.7","205":"99.7","206":"99.7","207":"99.7"},"bianseList":{}}');
+    }else if(type==19){
+        json = $.parseJSON('{"openDateList":{"number":20190802013,"endTime":229,"lotteryTime":249,"nextNumber":1},"win":0.0,"credit":0.0,"usableCredit":0.0,"phase":[12,276,"5","00:00","24:00"],"openNumList":{"newnumber":20190802012,"numList":[2,4,1,6,8]},"betList":[]}');
+    }else if(type==20){
+        json = $.parseJSON('{"openDateList":{"number":20190802013,"endTime":138,"lotteryTime":158,"nextNumber":1},"win":0.0,"credit":0.0,"usableCredit":0.0,"phase":[12,276,"5","00:00","24:00"],"openNumList":{"newnumber":20190802012,"numList":[2,4,1,6,8]}}');
+    }else if(type==22){
+        json = $.parseJSON('{"openDateList":{"number":20190802013,"endTime":110,"lotteryTime":130,"nextNumber":1},"win":0.0,"credit":0.0,"usableCredit":0.0,"phase":[12,276,"5","00:00","24:00"],"openNumList":{"newnumber":20190802012,"numList":[2,4,1,6,8]}}');
+    }
+
         $("#game_small_name").html($("#game_box_title li.active a").html());
         $("#profit").html(json.win) //今天输赢
         $("#usableCreditSpan").html(json.usableCredit); //可用额
@@ -214,7 +233,9 @@ function gamedata(msg) {
             }
             var _continueNum = function () {
                 var newnumber = json.openNumList.newnumber || 0;
-                G.ajax("AutoNewNumber&gameIndex=" + gameIndex, function (json) {
+                //autoNewNumber
+                // G.ajax("AutoNewNumber&gameIndex=" + gameIndex, function (json) {
+                    var json = $.parseJSON('{"result":"20190802006"}');
                     var m = json.result;
                     // var m = json.result;
                     if (m == "continue") {
@@ -233,15 +254,15 @@ function gamedata(msg) {
                             middleBind({ data_action: myaction });
                         }, 2000);
                     }
-                }, function () {
-                    if (S.intervalOpenTime) {
-                        clearInterval(S.intervalOpenTime);
-                    }
-                });
+                // }, function () {
+                //     if (S.intervalOpenTime) {
+                //         clearInterval(S.intervalOpenTime);
+                //     }
+                // });
             };
             _continueNum();
         })();
-    });
+    // });
 }
 
 function game_loading_wrap(stop) {
