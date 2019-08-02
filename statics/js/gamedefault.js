@@ -96,7 +96,6 @@ function gamedata(msg) {
     var data_action_arr = data_action.split('&');
     var type = data_action_arr[2].substr(5);
     var json;
-    console.log(type);
     if(type==2){
         json = $.parseJSON('{"openDateList":{"number":20190802006,"endTime":224,"lotteryTime":244,"nextNumber":1},"win":0.0,"credit":0.0,"usableCredit":0.0,"phase":[5,283,"5","00:00","24:00"],"openNumList":{"newnumber":20190802005,"numList":[6,3,5,4,8]},"oddsList":{"1":"9.97","2":"9.97","3":"9.97","4":"9.97","5":"9.97","6":"9.97","7":"9.97","8":"9.97","9":"9.97","10":"9.97","15":"9.97","16":"9.97","17":"9.97","18":"9.97","19":"9.97","20":"9.97","21":"9.97","22":"9.97","23":"9.97","24":"9.97","29":"9.97","30":"9.97","31":"9.97","32":"9.97","33":"9.97","34":"9.97","35":"9.97","36":"9.97","37":"9.97","38":"9.97","43":"9.97","44":"9.97","45":"9.97","46":"9.97","47":"9.97","48":"9.97","49":"9.97","50":"9.97","51":"9.97","52":"9.97","57":"9.97","58":"9.97","59":"9.97","60":"9.97","61":"9.97","62":"9.97","63":"9.97","64":"9.97","65":"9.97","66":"9.97"},"bianseList":{}}');
     }else if(type==9){
@@ -1088,11 +1087,13 @@ function dataSubmit(data, myurl, objthis, printAry) {
     for (var i in data) {
         mydata.push(i + "=" + data[i]);
     }
+
     var data_action = [url, mydata.join("&")];
     G.mask();
-    G.ajax(data_action.join("&"), function (json) {
-
+    // G.ajax(data_action.join("&"), function (json) {
+    var json = $.parseJSON('{"result":"余额不足"}');
         if (json.result != 1){
+            // alert('余额不足');
             G.maskClose();
             G.alert({ content: json.result, ok: function () { return true; } });
             return;
@@ -1107,7 +1108,7 @@ function dataSubmit(data, myurl, objthis, printAry) {
 
         // setTimeout(dataSubmit(data,myurl,objthis,printAry),1000);
 
-    }, function () { G.maskClose(); });
+    // }, function () { G.maskClose(); });
 }
 
 

@@ -112,11 +112,112 @@ $(function () {
                 G.mask();
                 $.ajax({
                     type: "get",
-                    url: "/Introduction.htm",
+                    // url: "/Introduction.htm",
+                    url: "/",
                     cache: true,
                     dataType: 'text',
                     data: null,
                     success: function (text) {
+                        text = '<div class="WFBox" id=\'introduction\'>\n' +
+                            '    <div class="MenuBox2">\n' +
+                            '        <label></label>\n' +
+                            '    </div>\n' +
+                            '\n' +
+                            '\n' +
+                            '\n' +
+                            '    <!--重慶时时彩-->\n' +
+                            '    <div class="contentNode" style="display:none;" id="conNode_3">\n' +
+                            '        <div class="box mt7">\n' +
+                            '            <h1>重要声明:</h1>\n' +
+                            '            <ul>\n' +
+                            '                <li><label>1.</label><span>如果客户怀疑自己的资料被盜用，应立即通知本公司，并更改详细资料，以前的使用者名称及密码将全部无效。</span></li>\n' +
+                            '                <li><label>2.</label><span>客户有责任确保自己的账户及登入资料的保密性。以使用者名称及密码进行的任何网上投注将被视为有效。</span></li>\n' +
+                            '                <li><label>3.</label><span>公布赔率时出现的任何打字错误或非故意人为失误，本公司保留改正错误和按正确赔率结算投注的权力。您居住所在地的法律有可能规定网路博奕不合法；若此情況属实，本公司将不会批准您使用付账卡进行交易。</span></li>\n' +
+                            '                <li><label>4.</label><span>每次登入时客户都应该核对自己的账户结余额。如对余额有任何疑问，请在第一时间內通知本公司。</span></li>\n' +
+                            '                <li><label>5.</label><span>一旦投注被接受，则不得取消或修改。</span></li>\n' +
+                            '                <li><label>6.</label><span>所有号码赔率将不时浮动，派彩时的赔率将以确认投注时之赔率为准。</span></li>\n' +
+                            '                <li><label>7.</label><span>所有投注都必须在开奖前时间內进行否则投注无效。</span></li>\n' +
+                            '                <li class="line"><label>9.</label><span>所有投注派彩彩金皆含本金。</span></li>\n' +
+                            '            </ul>\n' +
+                            '            <h1>河内5分彩规则说明:</h1>\n' +
+                            '            <ul>\n' +
+                            '                <li class="line">&nbsp;&nbsp;该游戏的投注时间、开奖时间和开奖号码与河内5分彩完全同步，北京时间（GMT+8）每天白天从上午00：00开到24:00,每5分钟开一次奖,每天开奖288期。 </li>\n' +
+                            '            </ul>\n' +
+                            '            <p>※ 第一球~第五球</p>\n' +
+                            '            <ul>\n' +
+                            '                <li><label>●</label><span><strong>第一球特~第五球特：</strong>第一球特、第二球特、第三球特、第四球特、第五球特：指下注的每一球特与开出之号码其开奖顺序及开奖号码相同，视为中奖，如第一球开出号码8，下注第一球为8者视为中奖，其余情形视为不中奖。</span></li>\n' +
+                            '                <li><label>●</label><span><strong>单双大小：</strong><b>根据相应单项投注第一球特 ~ 第五球特开出的球号，判断胜负。</b></span></li>\n' +
+                            '                <li><label>&nbsp;</label><span><strong>单双：</strong>根据相应单项投注的第一球特 ~ 第五球特开出的球号为双数叫特双，如2、6；特码为单数叫特单，如1、3。</span></li>\n' +
+                            '                <li><label>&nbsp;</label><span><strong>大小：</strong>根据相应单项投注的第一球特 ~ 第五球特开出的球号大于或等于5为特码大，小于或等于4为特码小。</span></li>\n' +
+                            '                <li><label>●</label><span><strong>总和单双大小：</strong></span></li>\n' +
+                            '                <li><label>&nbsp;</label><span><strong>单双：</strong>根据相应单项投注的第一球特 ~ 第五球特开出的球号数字总和值是双数为总和双，数字总和值是单数为总和单。</span></li>\n' +
+                            '                <li class="line"><label>&nbsp;</label><span><strong>大小：</strong>根据相应单项投注的第一球特 ~ 第五球特开出的球号大于或等于23为特码大，小于或等于22为特码小。</span></li>\n' +
+                            '            </ul>\n' +
+                            '            <p>※ 二字定 ～ 四字定</p>\n' +
+                            '            <ul>\n' +
+                            '                <li><label>●</label><span>下注号码与开出之号码与下注顺序与号码相同则为中奖，其余则不中奖。如开出12345，12XXX、1X3XX、123XX、12X3X、1234X、X2345为中奖</span></li>\n' +
+                            '            </ul>\n' +
+                            '         \n' +
+                            '           \n' +
+                            '\n' +
+                            '            <div class="clear"></div>\n' +
+                            '        </div>\n' +
+                            '        <div class="clear"></div>\n' +
+                            '    </div>\n' +
+                            '\n' +
+                            '\n' +
+                            '\n' +
+                            '    <!--北京賽車(PK10)-->\n' +
+                            '    <div class="contentNode" style="display:none;" id="conNode_4">\n' +
+                            '        <div class="box mt7">\n' +
+                            '            <h1>重要聲明:</h1>\n' +
+                            '            <ul>\n' +
+                            '                <li><label>1.</label><span>如果客户怀疑自己的资料被盜用，应立即通知本公司，并更改详细资料，以前的使用者名称及密码将全部无效。</span></li>\n' +
+                            '                <li><label>2.</label><span>客户有责任确保自己的账户及登入资料的保密性。以使用者名称及密码进行的任何网上投注将被视为有效。</span></li>\n' +
+                            '                <li><label>3.</label><span>公布赔率时出现的任何打字错误或非故意人为失误，本公司保留改正错误和按正确赔率结算投注的权力。您居住所在地的法律有可能规定网路博奕不合法；若此情況属实，本公司将不会批准您使用付账卡进行交易。</span></li>\n' +
+                            '                <li><label>4.</label><span>每次登入时客户都应该核对自己的账户结余额。如对余额有任何疑问，请在第一时间內通知本公司。</span></li>\n' +
+                            '                <li><label>5.</label><span>一旦投注被接受，则不得取消或修改。</span></li>\n' +
+                            '                <li><label>6.</label><span>所有号码赔率将不时浮动，派彩时的赔率将以确认投注时之赔率为准。</span></li>\n' +
+                            '                <li><label>7.</label><span>每注最高投注金额按不同[場次]及[投注項目]及[会員账号]設定浮动。如投注金额超過上述設定，本公司有权取消超過之投注金额。</span></li>\n' +
+                            '                <li><label>8.</label><span>所有投注都必须在开奖前时间內进行否则投注无效。</span></li>\n' +
+                            '                <li class="line"><label>9.</label><span>所有投注派彩彩金皆含本金。</span></li>\n' +
+                            '            </ul>\n' +
+                            '            <h1>北京赛车(原名：北京福彩“PK拾”)规则说明:</h1>\n' +
+                            '            <ul>\n' +
+                            '                <li class="line">&nbsp;&nbsp;该游戏的投注时间、开奖时间和开奖号码与“北京PK拾”完全同步，北京时间（GMT+8）每天白天从上午09:10开到晚上23:50，每20分钟开一次奖,每天开奖44期。</li>\n' +
+                            '            </ul>\n' +
+                            '            <p>※ 1～10 两面：<b>指 单、双；大、小。</b></p>\n' +
+                            '            <ul>\n' +
+                            '                <li><label>●</label><span><strong>单、双：</strong>号码为双数叫双，如4、8；号码为单数叫单，如5、9。</span></li>\n' +
+                            '                <li class="line"><label>●</label><span><strong>大、小：</strong>开出之号码大于或等于6为大，小于或等于5为小。</span></li>\n' +
+                            '            </ul>\n' +
+                            '            <p>※ 第一名～第十名 车号指定</p>\n' +
+                            '            <ul>\n' +
+                            '                <li class="line"><label>●</label><span>每一个车号为一投注组合，开奖结果“投注车号”对应所投名次视为中奖，其余情形视为不中奖。 </span></li>\n' +
+                            '            </ul>\n' +
+                            '            <p>※ 1～5龙虎</p>\n' +
+                            '            <ul>\n' +
+                            '                <li><label>●</label><span><strong>冠　军 龙/虎：</strong>“第一名”车号大于“第十名”车号视为【龙】中奖、反之小于视为【虎】中奖，其余情形视为不中奖。</span></li>\n' +
+                            '                <li><label>●</label><span><strong>亚　军 龙/虎：</strong>“第二名”车号大于“第九名”车号视为【龙】中奖、反之小于视为【虎】中奖，其余情形视为不中奖。</span></li>\n' +
+                            '                <li><label>●</label><span><strong>第三名 龙/虎：</strong>“第三名”车号大于“第八名”车号视为【龙】中奖、反之小于视为【虎】中奖，其余情形视为不中奖。</span></li>\n' +
+                            '                <li><label>●</label><span><strong>第四名 龙/虎：</strong>“第四名”车号大于“第七名”车号视为【龙】中奖、反之小于视为【虎】中奖，其余情形视为不中奖。</span></li>\n' +
+                            '                <li class="line"><label>●</label><span><strong>第五名 龙/虎：</strong>“第五名”车号大于“第六名”车号视为【龙】中奖、反之小于视为【虎】中奖，其余情形视为不中奖。</span></li>\n' +
+                            '            </ul>\n' +
+                            '            <p>※ 冠军车号＋亚军车号＝冠亚和值</p>\n' +
+                            '            <ul>\n' +
+                            '                <li><label>●</label><span><strong>冠亚和单双：</strong>“冠亚和值”为单视为投注“单”的注单视为中奖，为双视为投注“双”的注单视为中奖，其余视为不中奖。</span></li>\n' +
+                            '                <li><label>●</label><span><strong>冠亚和大小：</strong>“冠亚和值”大于11时投注“大”的注单视为中奖，小于或等于11时投注“小”的注单视为中奖，其余视为不中奖。</span></li>\n' +
+                            '                <li><label>●</label><span><strong>冠亚和指定：</strong>“冠亚和值”可能出现的结果为3～19，  投中对应“冠亚和值”数字的视为中奖，其余视为不中奖。</span></li>\n' +
+                            '            </ul>\n' +
+                            '            <div class="clear"></div>\n' +
+                            '        </div>\n' +
+                            '        <div class="clear"></div>\n' +
+                            '    </div>\n' +
+                            '\n' +
+                            '\n' +
+                            '\n' +
+                            '\n' +
+                            '</div>';
                         G.maskClose();
                         G.alert({ title: data_title, content: text, width: 820, height: 680,
                             initialize: function () {
@@ -384,7 +485,8 @@ function getSwitch(i) {
 //历史开奖
 function Result(msg) {
     G.mask();
-    G.ajax(msg.data_action, function (json) {
+    // G.ajax(msg.data_action, function (json) {
+    var json = $.parseJSON('{"table":["<tr class=\'\'><td>20190802179<br />08-02 14:55</td><td><i class=\'SSCNo_5\'></i><i class=\'SSCNo_3\'></i><i class=\'SSCNo_1\'></i><i class=\'SSCNo_9\'></i><i class=\'SSCNo_7\'></i></td><td class=\'sw45\'>25</td><td class=\'red sw35\'>大</td><td class=\'sw35\'>单</td></tr>","<tr class=\'\'><td>20190802178<br />08-02 14:50</td><td><i class=\'SSCNo_5\'></i><i class=\'SSCNo_0\'></i><i class=\'SSCNo_2\'></i><i class=\'SSCNo_2\'></i><i class=\'SSCNo_3\'></i></td><td class=\'sw45\'>12</td><td class=\'sw35\'>小</td><td class=\'red sw35\'>双</td></tr>","<tr class=\'\'><td>20190802177<br />08-02 14:45</td><td><i class=\'SSCNo_7\'></i><i class=\'SSCNo_0\'></i><i class=\'SSCNo_0\'></i><i class=\'SSCNo_3\'></i><i class=\'SSCNo_7\'></i></td><td class=\'sw45\'>17</td><td class=\'sw35\'>小</td><td class=\'sw35\'>单</td></tr>","<tr class=\'\'><td>20190802176<br />08-02 14:40</td><td><i class=\'SSCNo_9\'></i><i class=\'SSCNo_0\'></i><i class=\'SSCNo_2\'></i><i class=\'SSCNo_1\'></i><i class=\'SSCNo_6\'></i></td><td class=\'sw45\'>18</td><td class=\'sw35\'>小</td><td class=\'red sw35\'>双</td></tr>","<tr class=\'\'><td>20190802175<br />08-02 14:35</td><td><i class=\'SSCNo_1\'></i><i class=\'SSCNo_2\'></i><i class=\'SSCNo_1\'></i><i class=\'SSCNo_3\'></i><i class=\'SSCNo_5\'></i></td><td class=\'sw45\'>12</td><td class=\'sw35\'>小</td><td class=\'red sw35\'>双</td></tr>","<tr class=\'\'><td>20190802174<br />08-02 14:30</td><td><i class=\'SSCNo_7\'></i><i class=\'SSCNo_2\'></i><i class=\'SSCNo_1\'></i><i class=\'SSCNo_3\'></i><i class=\'SSCNo_1\'></i></td><td class=\'sw45\'>14</td><td class=\'sw35\'>小</td><td class=\'red sw35\'>双</td></tr>","<tr class=\'\'><td>20190802173<br />08-02 14:25</td><td><i class=\'SSCNo_0\'></i><i class=\'SSCNo_4\'></i><i class=\'SSCNo_8\'></i><i class=\'SSCNo_9\'></i><i class=\'SSCNo_4\'></i></td><td class=\'sw45\'>25</td><td class=\'red sw35\'>大</td><td class=\'sw35\'>单</td></tr>","<tr class=\'\'><td>20190802172<br />08-02 14:20</td><td><i class=\'SSCNo_9\'></i><i class=\'SSCNo_3\'></i><i class=\'SSCNo_6\'></i><i class=\'SSCNo_4\'></i><i class=\'SSCNo_5\'></i></td><td class=\'sw45\'>27</td><td class=\'red sw35\'>大</td><td class=\'sw35\'>单</td></tr>","<tr class=\'\'><td>20190802171<br />08-02 14:15</td><td><i class=\'SSCNo_6\'></i><i class=\'SSCNo_3\'></i><i class=\'SSCNo_1\'></i><i class=\'SSCNo_3\'></i><i class=\'SSCNo_1\'></i></td><td class=\'sw45\'>14</td><td class=\'sw35\'>小</td><td class=\'red sw35\'>双</td></tr>","<tr class=\'\'><td>20190802170<br />08-02 14:10</td><td><i class=\'SSCNo_1\'></i><i class=\'SSCNo_7\'></i><i class=\'SSCNo_0\'></i><i class=\'SSCNo_8\'></i><i class=\'SSCNo_0\'></i></td><td class=\'sw45\'>16</td><td class=\'sw35\'>小</td><td class=\'red sw35\'>双</td></tr>"]}');
         G.maskClose();
         var gameIndex = parseInt(G.query("gameIndex", "?" + msg.data_action));
         var data_thead, data_width, data_table = ["<div id='result'>"];
@@ -476,13 +578,14 @@ function Result(msg) {
             ok: function () { return true; }
         });
 
-    }, function () { G.maskClose(); });
+    // }, function () { G.maskClose(); });
 }
 
 //登录日志
 function LoginLog(msg) {
     G.mask();
-    G.ajax(msg.data_action + "&name=" + __sysinfo.data.userName, function (json) {
+    // G.ajax(msg.data_action + "&name=" + __sysinfo.data.userName, function (json) {
+    var json = $.parseJSON('[[132934,"2019-08-02 10:54:57","***",""],[128662,"2019-08-01 22:49:07","***",""],[128629,"2019-08-01 22:45:06","***",""],[128149,"2019-08-01 21:57:22","***",""],[126362,"2019-08-01 19:01:30","***",""],[126353,"2019-08-01 19:00:24","***",""],[126321,"2019-08-01 18:57:12","***",""],[126296,"2019-08-01 18:53:22","***",""],[126206,"2019-08-01 18:43:37","***",""],[125505,"2019-08-01 17:26:51","***",""]]');
         G.maskClose();
         var data_table = ["<div id='result'>"];
         data_table.push("<div class='history_wrap'>");
@@ -538,7 +641,7 @@ function LoginLog(msg) {
             ok: function () { return true; }
         });
 
-    }, function () { G.maskClose(); });
+    // }, function () { G.maskClose(); });
 }
 
 
@@ -614,7 +717,8 @@ function ChangePwd(msg) {
 //个人信息
 function UserInfo(msg) {
     G.mask();
-    G.ajax(msg.data_action, function (json) {
+    // G.ajax(msg.data_action, function (json) {
+        var json = $.parseJSON('{"userName":"29chenv","fatherName":"29chenv","rebateId":0,"state":"启用","credits":0.0,"yuer":0.0,"list":{"1":[1.0,1000,10000,9.97,0.013,9.84,0.197,0.001,0.01],"15":[1.0,1000,10000,9.97,0.013,9.84,0.197,0.001,0.01],"29":[1.0,1000,10000,9.97,0.013,9.84,0.197,0.001,0.01],"43":[1.0,1000,10000,9.97,0.013,9.84,0.197,0.001,0.01],"57":[1.0,1000,10000,9.97,0.0,9.97,0.197,0.001,0.01],"108":[1.0,1000,5000,99.7,0.0,99.7,0.197,0.001,0.1],"208":[1.0,1000,5000,99.7,0.0,99.7,0.197,0.001,0.1],"308":[1.0,1000,5000,99.7,0.0,99.7,0.197,0.001,0.1],"408":[1.0,1000,5000,99.7,0.0,99.7,0.197,0.001,0.1],"508":[1.0,1000,5000,99.7,0.0,99.7,0.197,0.001,0.1],"608":[1.0,1000,5000,99.7,0.0,99.7,0.197,0.001,0.1],"708":[1.0,1000,5000,99.7,0.0,99.7,0.197,0.001,0.1],"808":[1.0,1000,5000,99.7,0.0,99.7,0.197,0.001,0.1],"908":[1.0,1000,5000,99.7,0.0,99.7,0.197,0.001,0.1],"1008":[1.0,1000,5000,99.7,0.0,99.7,0.197,0.001,0.1],"1108":[0.1,100,1000,997.0,0.0,997.0,0.197,0.001,1.0],"2108":[0.1,100,1000,997.0,0.0,997.0,0.197,0.001,1.0],"3108":[0.1,100,1000,997.0,0.0,997.0,0.197,0.001,1.0],"4108":[0.1,100,1000,997.0,0.0,997.0,0.197,0.001,1.0],"5108":[0.1,100,1000,997.0,0.0,997.0,0.197,0.001,1.0],"6108":[0.1,100,1000,997.0,0.0,997.0,0.197,0.001,1.0],"7108":[0.1,100,1000,997.0,0.0,997.0,0.197,0.001,1.0],"8108":[0.1,100,1000,997.0,0.0,997.0,0.197,0.001,1.0],"9108":[0.1,100,1000,997.0,0.0,997.0,0.197,0.001,1.0],"10108":[0.1,100,1000,997.0,0.0,997.0,0.197,0.001,1.0],"11108":[0.1,10,30,9970.0,0.0,9970.0,0.197,0.001,10.0],"21108":[0.1,10,30,9970.0,0.0,9970.0,0.197,0.001,10.0],"31108":[0.1,10,30,9970.0,0.0,9970.0,0.197,0.001,10.0],"41108":[0.1,10,30,9970.0,0.0,9970.0,0.197,0.001,10.0],"51108":[0.1,10,30,9970.0,0.0,9970.0,0.197,0.001,10.0]}}');
         G.maskClose();
 
         var gameIndex = parseInt(G.query("gameIndex", "?" + msg.data_action));
@@ -831,15 +935,16 @@ function UserInfo(msg) {
 
         });
 
-    }, function () { G.maskClose(); });
+    // }, function () { G.maskClose(); });
 }
 
 //报表详情
 function BetDetails(msg) {
     $("#rightBox").html("");
     $("#numNavList li.active").removeClass("active");
-
-    G.ajax(msg.data_action, function (json) {
+    // 下注明细
+    var json = $.parseJSON('{"betList":[],"dateAry":["2019-08-02","2019-08-01","2019-07-31","2019-07-30","2019-07-29","2019-07-28","2019-07-27"],"numAry":[20190802177,20190802176,20190802175,20190802174,20190802173,20190802172,20190802171,20190802170,20190802169,20190802168,20190802167,20190802166,20190802165,20190802164,20190802163,20190802162,20190802161,20190802160,20190802159,20190802158,20190802157,20190802156,20190802155,20190802154,20190802153,20190802152,20190802151,20190802150,20190802149,20190802148,20190802147,20190802146,20190802145,20190802144,20190802143,20190802142,20190802141,20190802140,20190802139,20190802138,20190802137,20190802136,20190802135,20190802134,20190802133,20190802132,20190802131,20190802130,20190802129,20190802128,20190802127,20190802126,20190802125,20190802124,20190802123,20190802122,20190802121,20190802120,20190802119,20190802118,20190802117,20190802116,20190802115,20190802114,20190802113,20190802112,20190802111,20190802110,20190802109,20190802108,20190802107,20190802106,20190802105,20190802104,20190802103,20190802102,20190802101,20190802100,20190802099,20190802098,20190802097,20190802096,20190802095,20190802094,20190802093,20190802092,20190802091,20190802090,20190802089,20190802088,20190802087,20190802086,20190802085,20190802084,20190802083,20190802082,20190802081,20190802080,20190802079,20190802078,20190802077,20190802076,20190802075,20190802074,20190802073,20190802072,20190802071,20190802070,20190802069,20190802068,20190802067,20190802066,20190802065,20190802064,20190802063,20190802062,20190802061,20190802060,20190802059,20190802058,20190802057,20190802056,20190802055,20190802054,20190802053,20190802052,20190802051,20190802050,20190802049,20190802048,20190802047,20190802046,20190802045,20190802044,20190802043,20190802042,20190802041,20190802040,20190802039,20190802038,20190802037,20190802036,20190802035,20190802034,20190802033,20190802032,20190802031,20190802030,20190802029,20190802028,20190802027,20190802026,20190802025,20190802024,20190802023,20190802022,20190802021,20190802020,20190802019,20190802018,20190802017,20190802016,20190802015,20190802014,20190802013,20190802012,20190802011,20190802010,20190802009,20190802008,20190802007,20190802006,20190802005,20190802004,20190802003,20190802002,20190802001],"currentPage":1,"totalPage":1,"gameIndex":3}');
+    // G.ajax(msg.data_action, function (json) {
         G.maskClose();
         if (json.result && json.result != 1){
             G.alert({ content: json.result, ok: function () { return true; } });
@@ -1028,9 +1133,9 @@ function BetDetails(msg) {
             G.mask();
             BetDetails({ data_action: referrer });
         }
-    },function () {
-        G.maskClose();
-    });
+    // },function () {
+    //     G.maskClose();
+    // });
 
 }
 
@@ -1038,7 +1143,8 @@ function BetDetails(msg) {
 function IssueHistory(msg) {
     $("#rightBox").html("");
     $("#numNavList li.active").removeClass("active");
-    G.ajax(msg.data_action, function (json) {
+    // G.ajax(msg.data_action, function (json) {
+    var json = $.parseJSON('{"betList":[]}');
         $("#mainIframe").find("div[class='gameLeft']").attr("style","");
         $("#mainIframe").find("div[class='game_wrap']").attr("style","");
         $("#mainIframe").find("div[class='game_item_warp']").attr("style","");
@@ -1128,13 +1234,14 @@ function IssueHistory(msg) {
             referrer = referrer.replace("?", "");
             IssueHistory({ data_action: referrer });
         }
-    });
+    // });
 }
 //快选日志
 function KXLog(msg) {
     $("#rightBox").html("");
     $("#numNavList li.active").removeClass("active");
-    G.ajax(msg.data_action, function (json) {
+    // G.ajax(msg.data_action, function (json) {
+    var json = $.parseJSON('{"currentPage":1,"totalPage":1,"list":[]}');
         $("#mainIframe").find("div[class='gameLeft']").attr("style","");
         $("#mainIframe").find("div[class='game_wrap']").attr("style","");
         $("#mainIframe").find("div[class='game_item_warp']").attr("style","");
@@ -1219,12 +1326,14 @@ function KXLog(msg) {
             referrer = referrer.replace("?", "");
             KXLog({ data_action: referrer });
         }
-    });
+    // });
 }
 //结算报表-日期查询
 function History(msg) {
     G.mask();
-    G.ajax(msg.data_action, function (json) {
+    // G.ajax(msg.data_action, function (json) {
+        var json = $.parseJSON('[["2019-07-22","07-22 星期一",0,0,0,0],["2019-07-23","07-23 星期二",0,0,0,0],["2019-07-24","07-24 星期三",0,0,0,0],["2019-07-25","07-25 星期四",0,0,0,0],["2019-07-26","07-26 星期五",0,0,0,0],["2019-07-27","07-27 星期六",0,0,0,0],["2019-07-28","07-28 星期日",0,0,0,0],["2019-07-29","07-29 星期一",0,0,0,0],["2019-07-30","07-30 星期二",0,0,0,0],["2019-07-31","07-31 星期三",0,0,0,0],["2019-08-01","08-01 星期四",0,0,0,0],["2019-08-02","08-02 星期五",0,0,0,0],["2019-08-03","08-03 星期六",0,0,0,0],["2019-08-04","08-04 星期日",0,0,0,0]]');
+        console.log(json);
         G.maskClose();
         var txt_right, data_cunt = [0, 0, 0, 0];
         var data_table = ["<div id='result'>"];
@@ -1326,7 +1435,7 @@ function History(msg) {
             },
             ok: function () { return true; }
         });
-    }, function () { G.maskClose(); });
+    // }, function () { G.maskClose(); });
 }
 function HistoryGame(json, data_action, myaction) {
     var data_cunt = [0, 0, 0, 0, 0];

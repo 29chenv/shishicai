@@ -67,7 +67,6 @@ var G = {
         var cancelVal = msg.cancelVal || "取消";
         var lock = true;
         var top, left;
-
         myobj.find(".myLayerTitle h3").html(title);
         myobj.find(".myLayerContent").html(content);
         myobj.find(".myLayerFooter").hide();
@@ -121,6 +120,7 @@ var G = {
             }
         });
         myobj.find(".myLayerOk").unbind("click").click(function () {
+            console.log(ok());
             if (ok()) { G.alertClose(); }
             if (close) { close(); }
         });

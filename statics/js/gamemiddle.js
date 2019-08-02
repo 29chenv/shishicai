@@ -491,9 +491,7 @@ function fastbet(msg) {
         console.log(13);
         if (type == 0) return;
         G.mask();
-        //下注的时候判断余额 chenwei
-        // G.ajax("DownEntry&gameIndex=3&sortAry=" + type + ":" + money + "&number=" + data_number + "&fast=true&betType=3", function (json) {
-        var json = $.parseJSON('{"result":"余额不足"}');
+        G.ajax("DownEntry&gameIndex=3&sortAry=" + type + ":" + money + "&number=" + data_number + "&fast=true&betType=3", function (json) {
             if (json.result != 1){
                 G.maskClose();
                 G.alert({ content: json.result, ok: function () { return true; } });
@@ -505,7 +503,7 @@ function fastbet(msg) {
             }
 
             G.maskClose();
-        // }, function () { G.maskClose(); });
+        }, function () { G.maskClose(); });
     });
 }
 
